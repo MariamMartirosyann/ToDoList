@@ -1,18 +1,43 @@
-import React from "react";
-import FormControl from "@mui/material/FormControl";
-import OutlinedInput from "@mui/material/OutlinedInput";
-import AddCircleIcon from '@mui/icons-material/AddCircle';
-import '../App.css';
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { addToDo } from "../app/redux/ToDoSlice";
+
+import "../App.css";
 
 
 const Input = () => {
+  const [input, setInput] = useState();
+  const dispatch = useDispatch();
+ 
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    
+    dispatch(
+      addToDo({
+        name: input,
+      })
+    );
+  };
+  const handleChange = (event) => {
+    setInput(event.target.input);
+   
+  };
+
   return (
     <div className={"inputArea"}>
-      <FormControl sx={{ width: "550px" }} >
-        <OutlinedInput placeholder="Please enter text" />
-       < AddCircleIcon className="addIcon"/>
-
-      </FormControl>
+      <form  onSubmit={handleSubmit} style={{ width: "550px" }}>
+  
+        <input
+				type='text'
+        className={"mainInput"}
+				placeholder="Add a new task ..."
+        value={input}
+				onChange={handleChange}
+			></input>
+       
+      </form>
+      <button type="submit" className={"submitBtn"}>Submit</button>
     </div>
   );
 };

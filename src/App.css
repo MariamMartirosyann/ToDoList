@@ -10,9 +10,50 @@
   text-align: center;
   margin: 10px;
   color: goldenrod;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 .addIcon{
   position: absolute;
   right: 10px;
   bottom: 17px;
+}
+.toDoBtn{
+  width: 400px;
+  height: 30px;
+  background: white;
+  border:2px solid goldenrod;
+  padding: 5px;
+  margin-top: 30px;
+}
+.toDoItemDiv{
+  position: relative;
+
+}
+.doneIcon{
+position: absolute;
+left: 57%;
+bottom: 3.5px;
+}
+.deleteIcon{
+  position: absolute;
+  left: 58.7%;
+bottom: 3.5px;
+}
+.submitBtn{
+  background: white;
+  border: 1px solid goldenrod;
+  height: 54px;
+  width: 100px;
+  margin-left:15px;
+}
+.mainInput{
+  width: 100%;
+  height: 60px;
+  box-sizing: border-box;
+  border: 2px solid goldenrod;
+  align-items: center;
+  padding: 25px;
+ 
 }
