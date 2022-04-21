@@ -4,9 +4,15 @@
 }
 .mainTitle{
   text-align: center;
- margin-top: 50%;
+ margin-top: 100px;
 }
 .inputArea{
   text-align: center;
   margin: 10px;
+  color: goldenrod;
+}
+.addIcon{
+  position: absolute;
+  right: 10px;
+  bottom: 17px;
 }
