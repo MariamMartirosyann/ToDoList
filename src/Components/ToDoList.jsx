@@ -1,14 +1,17 @@
 import React from 'react';
 import ToDoItem from './ToDoItem';
+import { useSelector } from 'react-redux';
+import TotalCompleteItems from './TotalCompleteItems';
+
+
 
 
 const ToDoList = () => {
+  const toDoItems = useSelector((state)=> state.todo)
   return (
     <div>
-     <ToDoItem name="Task 1"/>   
-     <ToDoItem name="Task 2"/>  
-     <ToDoItem name="Task 3"/>  
-     <ToDoItem name="Task 4"/>  
+      {toDoItems ? toDoItems.map(i => <ToDoItem id = {i.id} name={i.name} done={i.done}/>):null}
+      <TotalCompleteItems/>
     </div>
   )
 }

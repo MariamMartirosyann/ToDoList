@@ -1,18 +1,17 @@
 *{
  
   color: goldenrod;
+ 
 }
 .mainTitle{
   text-align: center;
  margin-top: 100px;
 }
 .inputArea{
-  text-align: center;
   margin: 10px;
   color: goldenrod;
-  display: flex;
-  flex-direction: row;
   justify-content: center;
+
 }
 .addIcon{
   position: absolute;
@@ -31,11 +30,7 @@
   position: relative;
 
 }
-.doneIcon{
-position: absolute;
-left: 57%;
-bottom: 3.5px;
-}
+
 .deleteIcon{
   position: absolute;
   left: 58.7%;
@@ -47,6 +42,8 @@ bottom: 3.5px;
   height: 54px;
   width: 100px;
   margin-left:15px;
+
+
 }
 .mainInput{
   width: 100%;
@@ -55,5 +52,19 @@ bottom: 3.5px;
   border: 2px solid goldenrod;
   align-items: center;
   padding: 25px;
+  margin:10px;
+  
  
+}
+.form{
+ position: relative;
+}
+.deleteBtn{
+  background: white;
+  border: 1px solid goldenrod;
+  padding: 5px;
+}
+.totalCompleteItems{
+  padding: 40px;
+  
 }

@@ -1,14 +1,32 @@
+
 import React from 'react';
-import CheckCircleIcon from '@mui/icons-material/CheckCircle';
-import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
+import { useDispatch } from 'react-redux';
+import { toggleDone, deleteToDo } from '../app/redux/ToDoSlice';
+import Checkbox from '@mui/material/Checkbox';
+
+
+
 
 
 const ToDoItem = ({id, name, done}) => {
+  const dispatch = useDispatch();
+  const handleDoneClick = ()=>{
+    dispatch(
+      toggleDone({id:id, done:!done})
+    )
+  }
+  const handleDeleteClick =()=>{
+    dispatch(deleteToDo({id:id}))
+  }
   return (
+
     <div className='toDoItemDiv'>
      <button className='toDoBtn'>{name}</button>
-    <CheckCircleIcon className='doneIcon'/>
-    <DeleteForeverIcon className='deleteIcon'/>
+     <Checkbox checked={done} onChange={handleDoneClick}/>
+     
+     <button  className='deleteBtn' onClick={handleDeleteClick}>Delete</button>
+    
+    
     </div>
   )
 }
